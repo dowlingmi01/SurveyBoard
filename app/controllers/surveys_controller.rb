@@ -5,6 +5,7 @@ class SurveysController < ApplicationController
 
 	def create
 		@survey = Survey.new(survey_params)
+
 		if @survey.save
 			flash[:notice] = "Survey created!"
 			redirect_to @survey
@@ -14,6 +15,13 @@ class SurveysController < ApplicationController
 		end
 	end
 
+	def show
+		@survey = Survey.find(params[:id])
+	end
+
+	def index
+		@surveys = Survey.all
+	end
 
 	private 
 

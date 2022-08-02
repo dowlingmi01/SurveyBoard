@@ -1,0 +1,11 @@
+<h1>All Events</h1>
+
+<% @surveys.each do |survey| %>
+	<div>
+		<h4><%= survey.survey_name %></h4>
+		<p><%= survey.start_date %></p>
+		<p><%= survey.end_date %></p>
+		<p><%= survey.location %></p>
+
+	</div>
+<% end %>
