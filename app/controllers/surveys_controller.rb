@@ -1,10 +1,10 @@
 class SurveysController < ApplicationController
+	before_action :set_survey, only: [:show, :edit, :update, :destroy]
 	def index
 		@surveys = Survey.all
 	end
 
 	def show
-		@survey = Survey.find(params[:id])
 	end
 
 	def new
@@ -23,11 +23,9 @@ class SurveysController < ApplicationController
 	end
 
 	def edit
-		@survey = Survey.find(params[:id])
 	end
 
 	def update
-		@survey = Survey.find(params[:id])
 
 		if @survey.update(survey_params)
 			redirect_to @survey
@@ -37,7 +35,6 @@ class SurveysController < ApplicationController
 	end
 
 	def destroy
-		@survey = Survey.find(params[:id])
 		@survey.destroy
 
 		redirect_to surveys_path, status: :see_other
@@ -45,6 +42,14 @@ class SurveysController < ApplicationController
 
 
 	private 
+
+		def set_survey
+			@survey = Survey.find(params[:id])
+
+		rescue ActiveRecord::RecordNotFound
+			flash.alert = "The page you requested does not exist"
+			redirect_to surveys_path
+		end
 
 		def survey_params
 			params.require(:survey).permit(:survey_name, :description, :start_date, :end_date, :location)
