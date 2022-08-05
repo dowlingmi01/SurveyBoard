@@ -1,8 +1,10 @@
-<h1>All Events</h1>
+<h1>All Surveys</h1>
+
+<p><%= link_to "Add Survey", new_survey_path %></p>
 
 <% @surveys.each do |survey| %>
 	<div>
-		<h4><%= survey.survey_name %></h4>
+		<h4><%= link_to survey.survey_name, survey_path(survey) %></h4>
 		<p><%= survey.start_date %></p>
 		<p><%= survey.end_date %></p>
 		<p><%= survey.location %></p>

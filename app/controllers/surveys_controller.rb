@@ -1,4 +1,8 @@
 class SurveysController < ApplicationController
+	def index
+		@surveys = Survey.all
+	end
+
 	def new
 		@survey = Survey.new
 	end
@@ -7,20 +11,15 @@ class SurveysController < ApplicationController
 		@survey = Survey.new(survey_params)
 
 		if @survey.save
-			flash[:notice] = "Survey created!"
 			redirect_to @survey
 		else
 			flash.now[:alert] = "Survey not created"
-			render "new"
+			render :new, status: :unprocessable_entity
 		end
 	end
 
 	def show
 		@survey = Survey.find(params[:id])
-	end
-
-	def index
-		@surveys = Survey.all
 	end
 
 	def edit
@@ -29,13 +28,19 @@ class SurveysController < ApplicationController
 
 	def update
 		@survey = Survey.find(params[:id])
+
 		if @survey.update(survey_params)
-			flash[:notice] = "Event Updated!"
 			redirect_to @survey
 		else
-			flash.now[:alert] = "Event not updated"
-			render "edit"
+			render :edit, status: :unprocessable_entity
 		end
+	end
+
+	def destroy
+		@survey = Survey.find(params[:id])
+		@survey.destroy
+
+		redirect_to surveys_path, status: :see_other
 	end
 
 

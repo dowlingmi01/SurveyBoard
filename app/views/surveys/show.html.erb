@@ -9,3 +9,7 @@
 
 	<p><%= @survey.location %></p>
 </div>
+
+<p>
+	<%= link_to "Edit Survey", edit_survey_path(@survey) %> | <%= link_to "Delete Survey", survey_path(@survey), turbo_method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure"} %>
+</p>
