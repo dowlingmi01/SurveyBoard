@@ -23,6 +23,22 @@ class SurveysController < ApplicationController
 		@surveys = Survey.all
 	end
 
+	def edit
+		@survey = Survey.find(params[:id])
+	end
+
+	def update
+		@survey = Survey.find(params[:id])
+		if @survey.update(survey_params)
+			flash[:notice] = "Event Updated!"
+			redirect_to @survey
+		else
+			flash.now[:alert] = "Event not updated"
+			render "edit"
+		end
+	end
+
+
 	private 
 
 		def survey_params

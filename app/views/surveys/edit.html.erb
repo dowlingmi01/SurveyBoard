@@ -1,0 +1,27 @@
+<h1>Edit Survey</h1>
+
+<%= form_for(@survey) do |f| %>
+	<div>
+		<%= f.label :survey_name %>
+		<%= f.text_field :survey_name %>
+	</div>
+	<div>
+		<%= f.label :description %>
+		<%= f.text_area :description %>
+	</div>
+	<div>
+		<%= f.label :start_date %>
+		<%= f.datetime_select :start_date %>
+	</div>
+	<div>
+		<%= f.label :end_date %>
+		<%= f.datetime_select :end_date %>
+	</div>
+	<div>
+		<%= f.label :location %>
+		<%= f.text_field :location %>
+	</div>
+
+	<%= f.submit %>
+
+<% end %>
