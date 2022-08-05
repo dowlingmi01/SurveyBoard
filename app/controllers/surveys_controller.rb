@@ -3,6 +3,10 @@ class SurveysController < ApplicationController
 		@surveys = Survey.all
 	end
 
+	def show
+		@survey = Survey.find(params[:id])
+	end
+
 	def new
 		@survey = Survey.new
 	end
@@ -16,10 +20,6 @@ class SurveysController < ApplicationController
 			flash.now[:alert] = "Survey not created"
 			render :new, status: :unprocessable_entity
 		end
-	end
-
-	def show
-		@survey = Survey.find(params[:id])
 	end
 
 	def edit
