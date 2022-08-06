@@ -5,8 +5,8 @@
 <% @surveys.each do |survey| %>
 	<div>
 		<h4><%= link_to survey.survey_name, survey_path(survey) %></h4>
-		<p><%= survey.start_date %></p>
-		<p><%= survey.end_date %></p>
+		<p><%= time_format(survey.start_date) %></p>
+		<p><%= time_format(survey.end_date) %></p>
 		<p><%= survey.location %></p>
 
 	</div>
