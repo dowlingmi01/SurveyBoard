@@ -1,37 +1,16 @@
-<% if @survey.errors.any?%>
-	<div id="error_explanation">
-		<h2><%= pluralize(@survey.errors.count, "error") %> prohibited this event from being saved:</h2>
+<%= simple_form_for(survey) do |f| %>
 
-		<ul>
-			<%survey.errors.full_messages.each do |message| %>
-				<li><%= message %></li>
-			<% end %>
-		</ul>
-	</div>
-<% end %>
+	<%= f.input :survey_name %>
 
-<%= form_for(survey) do |f| %>
-	<div>
-		<%= f.label :survey_name %>
-		<%= f.text_field :survey_name %>
-	</div>
-	<div>
-		<%= f.label :description %>
-		<%= f.text_area :description %>
-	</div>
-	<div>
-		<%= f.label :start_date %>
-		<%= f.datetime_select(:start_date, order: [:month, :day, :year], start_year: Date.current.year, smpm: true, prompt: true) %>
-	</div>
-	<div>
-		<%= f.label :end_date %>
-		<%= f.datetime_select(:end_date, order: [:month, :day, :year], start_year: Date.current.year, smpm: true, prompt: true)  %>
-	</div>
-	<div>
-		<%= f.label :location %>
-		<%= f.text_field :location %>
-	</div>
+	<%= f.input :description %>
 
-	<%= f.submit %>
+
+	<%= f.input :start_date, as: :date, start_year: Date.today.year, ampm: true, order: [:month, :day, :year] %>
+
+	<%= f.input :end_date, as: :date, start_year: Date.today.year, ampm: true, order: [:month, :day, :year] %>
+
+	<%= f.input :location %>
+
+	<%= f.button :submit, class: "btn btn-primary" %>
 
 <% end %>

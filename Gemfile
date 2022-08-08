@@ -46,6 +46,7 @@ gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'jquery-rails'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
+gem 'simple_form', '~> 5.1'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
