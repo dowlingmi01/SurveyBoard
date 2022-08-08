@@ -1,13 +1,42 @@
-<h1>All Surveys</h1>
+<header>
+	<h1>All Surveys</h1>
 
-<p><%= link_to "Add Survey", new_survey_path %></p>
+	<ul class="actions">
+		<li><%= link_to "New Survey", new_survey_path, class: "new" %></li>
+	</ul>
+</header>
+
+<div class="col-sm-9">
+	<h3>Discover your surveys</h3>
+</div>
+
+<div class="row">
+	<div class="col-sm-3 pull-right">
+		<div class="sidebar">
+			<h3 class="discover">Discover</h3>
+			<ul class="nav nav-pills nav-stacked">
+				<li class="<%= "active" if current_page?("/surveys")%>"><%= link_to "All Surveys", surveys_path %></li>
+		</div>
+	</div>
+</div>
 
 <% @surveys.each do |survey| %>
-	<div>
-		<h4><%= link_to survey.survey_name, survey_path(survey) %></h4>
-		<p><%= time_format(survey.start_date) %><%= fa_icon "camera-retro" %></p>
-		<p><%= time_format(survey.end_date) %></p>
-		<p><%= survey.location %></p>
-
+		<div class=:col-sm-9 pull-left>
+			<%= link_to survey_path(survey) do %>
+				<div class="surveys">
+					<div class="row">
+						<div class="col-sm-3">
+							<%= image_tag "https://picsum.photos/200/100" %>
+						</div>
+						<div class="col-sm-9">
+							<h3 class="survey_name"><%= survey.survey_name %></h3>
+							<p class="lead-time">
+								<span class="survey-start"><%= time_format(survey.start_date) %></span>
+								<span class="pull-right">Organized by:</span>
+							</p>
+					</div>
+				</div>
+			<% end %>
 	</div>
 <% end %>
+
