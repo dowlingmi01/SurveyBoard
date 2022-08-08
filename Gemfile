@@ -42,6 +42,10 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 gem 'better_errors', '~> 2.9', '>= 2.9.1'
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+gem 'sassc-rails', '>= 2.1.0'
+gem 'jquery-rails'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
