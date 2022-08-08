@@ -1,17 +1,39 @@
 <% provide(:title, @survey.survey_name) %>
 
-<h1><%= @survey.survey_name %></h1>
+<header>
+	<h1 id="show-survey_name"><%= @survey.survey_name %></h1>
+	<ul class="actions">
+		<li><%= link_to "Edit Survey", edit_survey_path(@survey), class: "edit" %></li>
+		<li><%= link_to "Delete Survey", survey_path(@survey), method: :delete, data: {confirm: "Are you sure?"}, class: "delete" %></li>
+	</ul>
+</header>
 
-<div>
-	<p><%= @survey.description %></p>
+<div class="row">
+	<%= image_tag "https://picsum.photos/1080/500", class: "survey-image" %>
+	<div class="col-sm-9">
 
-	<p><%= time_format(@survey.start_date) %></p>
+		<div class="survey-meta">
+			<h4><span class="survey-start"><strong>Starts:</strong> <%= time_format(@survey.start_date) %></span></h4>
+			<p>
+				<span class="survey-end"><strong>Ends:</strong> <%= time_format(@survey.end_date) %></span>
+			</p>
+	</div>
+		<div class="survey-details">
+			<h3>Event Details</h3>
+			<p><%= @survey.description %></p>
+		</div>
+	</div>
 
-	<p><%= time_format(@survey.end_date) %></p>
-
-	<p><%= @survey.location %></p>
+	<div class="col-sm-3">
+		<div class="sidebar">
+			<h4 class= "organizer">Organizer Name</h4>
+			<p>
+				<span class="survey-location"><%= @survey.location %></span>
+			</p>
+		</div>
+		<div class="sidebar">
+			<h4 class="respondents">Respondents</h4>
+		</div>
+		
+	</div>
 </div>
-
-<p>
-	<%= link_to "Edit Survey", edit_survey_path(@survey) %> | <%= link_to "Delete Survey", survey_path(@survey), turbo_method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure"} %>
-</p>

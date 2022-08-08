@@ -36,7 +36,6 @@ class SurveysController < ApplicationController
 
 	def destroy
 		@survey.destroy
-
 		redirect_to surveys_path, status: :see_other
 	end
 
@@ -46,7 +45,7 @@ class SurveysController < ApplicationController
 		def set_survey
 			@survey = Survey.find(params[:id])
 
-		rescue ActiveRecord::RecordNotFound
+			rescue ActiveRecord::RecordNotFound
 			flash.alert = "The page you requested does not exist"
 			redirect_to surveys_path
 		end
