@@ -1,7 +1,7 @@
 <% provide(:title, @survey.survey_name) %>
 
 <header>
-	<h1 id="show-survey_name"><%= @survey.survey_name %></h1>
+	<h1 id="show-survey"><%= @survey.survey_name %></h1>
 	<ul class="actions">
 		<li><%= link_to "Edit Survey", edit_survey_path(@survey), class: "edit" %></li>
 		<li><%= link_to "Delete Survey", survey_path(@survey), method: :delete, data: {confirm: "Are you sure?"}, class: "delete" %></li>
@@ -9,17 +9,17 @@
 </header>
 
 <div class="row">
-	<%= image_tag "https://picsum.photos/1080/500", class: "survey-image" %>
 	<div class="col-sm-9">
+		<%= image_tag "https://picsum.photos/1080/500", class: "survey-image" %>
 
 		<div class="survey-meta">
 			<h4><span class="survey-start"><strong>Starts:</strong> <%= time_format(@survey.start_date) %></span></h4>
 			<p>
 				<span class="survey-end"><strong>Ends:</strong> <%= time_format(@survey.end_date) %></span>
 			</p>
-	</div>
+		</div>
 		<div class="survey-details">
-			<h3>Event Details</h3>
+			<h3>Survey Details</h3>
 			<p><%= @survey.description %></p>
 		</div>
 	</div>

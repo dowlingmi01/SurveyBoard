@@ -1,7 +1,4 @@
-// Place all the styles related to the events controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-.events h3.event-title {
+.surveys h3.survey-title {
   margin: 0 0 5px 0;
   color: #e0336b;
   font-size: 18px;
@@ -9,22 +6,22 @@
   line-height: 22px;
 }
 
-.event-image {
+.survey-image {
   @extend .img-responsive;
 }
 
-.events {
+.surveys {
   border-bottom: 1px solid #eaeaea;
   padding: 5px;
   color: #0b5467;
 }
 
-.events:hover {
+.surveys:hover {
   background: #f8f8f8;
 }
 
-.event-venue,
-.event-start,
+.survey-venue,
+.survey-start,
 .sidebar .discover,
 .sidebar .organizer,
 .sidebar .tags,
@@ -32,7 +29,7 @@
  /*.sidebar.likes,*/
  #like, #dislike,
 .comments,
-.event-end {
+.survey-end {
 
   &:before {
     font-family: "FontAwesome";
@@ -40,19 +37,19 @@
   }
 }
 
-.event-venue {
+.survey-venue {
   &:before {
     @extend .fa-map-marker;
   }
 }
 
-.event-start {
+.survey-start {
   &:before {
     @extend .fa-calendar;
   }
 }
 
-.event-end {
+.survey-end {
   &:before {
     @extend .fa-calendar-o;
   }
@@ -131,7 +128,7 @@ a #dislike,
 }
 
 
-.sidebar .attendees {
+.sidebar .respondents {
   font-size: 24px;
 
   &:before {
@@ -174,19 +171,19 @@ a #dislike,
 //   font-weight: 400;
 // }
 
-h1#show-title,
-.event-details h3 {
+h1#show-survey,
+.survey-details h3 {
   color: #d91e60;
 }
 
-.event-meta {
+.survey-meta {
   // margin: 0 -20px 20px;
   padding: 20px;
   background: #f23677;
   color: #fff;
 }
 
-.event-details h3 {
+.survey-details h3 {
   font-size: 22px;
   font-weight: 400;
   margin-top: 20px;
