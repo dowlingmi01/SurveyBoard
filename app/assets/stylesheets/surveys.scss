@@ -59,7 +59,7 @@
   font-size: 24px;
 
   &:before {
-    @extend .fa-compass;
+    @extend .fa-compass !optional;
   }
 }
 
@@ -75,7 +75,7 @@
   font-size: 24px;
 
   &:before {
-    @extend .fa-tag;
+    @extend .fa-tag !optional;
   }
 }
 
@@ -132,7 +132,7 @@ a #dislike,
   font-size: 24px;
 
   &:before {
-    @extend .fa-users;
+    @extend .fa-users !optional;
   }
 }
 
@@ -226,5 +226,5 @@ h1#show-survey,
 }
 
 .sidebar li {
-  @extend .text-justify;
+  @extend .text-justify !optional;
 }
