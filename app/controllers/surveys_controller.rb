@@ -4,7 +4,7 @@ class SurveysController < ApplicationController
 	before_action :authorize_owner!, only: [:edit, :update, :destroy]
 
 	def index
-		@surveys = Survey.all
+		@surveys = Survey.order(created_at: :desc)
 	end
 
 	def show
