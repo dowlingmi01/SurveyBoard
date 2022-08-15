@@ -28,8 +28,8 @@
 					<td><%= survey_status(survey) %></td>
 
 					<td>
-						<%= link_to "Edit", edit_survey_path(survey), class: "edit" %>
-						<%= link_to "Delete", survey_path(survey), method: :delete, data: {confirm: "Are you sure?"}, class: "delete" %>
+						<%= link_to "Edit", edit_survey_path(survey), class: "edit" if policy(survey).edit? %>
+						<%= link_to "Delete", survey_path(survey), method: :delete, data: {confirm: "Are you sure?"}, class: "delete" if policy(survey).destroy? %>
 					</td>
 
 				</tr>
