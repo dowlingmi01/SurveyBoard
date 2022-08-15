@@ -1,7 +1,7 @@
 <header>
 	<h1>All Surveys</h1>
 	<ul class="actions">
-		<li><%= link_to "New Survey", new_survey_path, class: "new" %></li>
+		<li><%= link_to "New Survey", new_survey_path, class: "new" if policy(Survey).new?%></li>
 	</ul>
 </header>
 

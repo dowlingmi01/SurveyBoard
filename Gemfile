@@ -33,7 +33,7 @@ gem 'devise', '~> 4.8', '>= 4.8.1' #for authentication
 gem 'pundit', '~> 2.2' #for authorization
 gem 'friendly_id', '~> 5.4', '>= 5.4.2' #for search engine optimization
 gem 'carrierwave', '~> 2.2', '>= 2.2.2' #for image upload
-gem 'fog', '~> 2.2' #for cloud upload of images
+# gem 'fog', '~> 2.2' #for cloud upload of images
 gem 'mini_magick', '~> 4.11' #carrierwave dependent
 gem 'searchkick', '~> 5.0', '>= 5.0.4' #for search function
 gem 'will_paginate', '~> 3.3', '>= 3.3.1' #for pagination
