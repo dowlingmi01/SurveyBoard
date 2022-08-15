@@ -4,29 +4,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.1.2"
 
 gem "rails", "~> 7.0.3", ">= 7.0.3.1"
-
-# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
-
-# Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
-
-# Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
-
-# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
-
-# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
-
-# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
-
-# Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
-
-# Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
@@ -35,19 +19,25 @@ gem "redis", "~> 4.0"
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
-# Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-gem 'better_errors', '~> 2.9', '>= 2.9.1'
-gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+gem 'better_errors', '~> 2.9', '>= 2.9.1' #for debugging
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1' #for bootstrap styling/framework
 gem 'sassc-rails', '>= 2.1.0'
 gem 'jquery-rails'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
-gem 'simple_form', '~> 5.1'
-gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'simple_form', '~> 5.1' # for form
+gem 'devise', '~> 4.8', '>= 4.8.1' #for authentication
+gem 'pundit', '~> 2.2' #for authorization
+gem 'friendly_id', '~> 5.4', '>= 5.4.2' #for search engine optimization
+gem 'carrierwave', '~> 2.2', '>= 2.2.2' #for image upload
+gem 'fog', '~> 2.2' #for cloud upload of images
+gem 'mini_magick', '~> 4.11' #carrierwave dependent
+gem 'searchkick', '~> 5.0', '>= 5.0.4' #for search function
+gem 'will_paginate', '~> 3.3', '>= 3.3.1' #for pagination
+gem 'bootstrap-will_paginate', '~> 1.0' #for bootstrap-style pagination
 
 # Use Sass to process CSS
 # gem "sassc-rails"
