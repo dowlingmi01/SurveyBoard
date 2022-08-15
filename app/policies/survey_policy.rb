@@ -24,7 +24,7 @@ def new?
 end
 
  def update?
-   user.present? && user == survey.organizer
+   (user.present? && user == survey.organizer) || user.try(:admin?)
  end
 
  def edit?
@@ -32,11 +32,11 @@ end
  end
 
  def destory?
-   user.present? && user == survey.organizer    
+   (user.present? && user == survey.organizer) || user.try(:admin?)    
  end
 
   private
-  
+
     def survey
       record 
     end
