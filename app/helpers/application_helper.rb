@@ -1,6 +1,6 @@
 module ApplicationHelper
 	def full_title(page_title = " ")
-		default_title = "Make it Count"
+		default_title = "Clout Cloud"
 		if page_title.empty?
 			default_title
 		else

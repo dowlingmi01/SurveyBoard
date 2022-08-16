@@ -31,7 +31,7 @@ end
    update?
  end
 
- def destory?
+ def destroy?
    (user.present? && user == survey.organizer) || user.try(:admin?)    
  end
 
