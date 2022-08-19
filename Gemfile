@@ -38,6 +38,7 @@ gem 'mini_magick', '~> 4.11' #carrierwave dependent
 gem 'searchkick', '~> 5.0', '>= 5.0.4' #for search function
 gem 'will_paginate', '~> 3.3', '>= 3.3.1' #for pagination
 gem 'bootstrap-will_paginate', '~> 1.0' #for bootstrap-style pagination
+gem 'elasticsearch'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
