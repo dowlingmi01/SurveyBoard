@@ -1,6 +1,6 @@
 .surveys h3.survey-title {
   margin: 0 0 5px 0;
-  color: #e0336b;
+  color: #1d4464;
   font-size: 18px;
   font-weight: 400px;
   line-height: 22px;
@@ -25,7 +25,7 @@
 .sidebar .discover,
 .sidebar .organizer,
 .sidebar .tags,
-.sidebar .attendees,
+.sidebar .respondents,
  /*.sidebar.likes,*/
  #like, #dislike,
 .comments,
@@ -132,7 +132,7 @@ a #dislike,
   font-size: 24px;
 
   &:before {
-    @extend .fa-users !optional;
+    @extend .fa-heart;
   }
 }
 
@@ -177,9 +177,9 @@ h1#show-survey,
 }
 
 .survey-meta {
-  // margin: 0 -20px 20px;
+  margin: 0 -20px 20px;
   padding: 20px;
-  background: #f23677;
+  background: #1d4464;
   color: #fff;
 }
 
@@ -203,13 +203,13 @@ h1#show-survey,
 
 // .nav > li > a:hover, 
 // .nav > li > a:focus {
-//   background: #e0336b;
+//   background: #1d4464;
 // }
 
 .nav-pills > li.active > a, 
 .nav-pills > li.active > a:hover, 
 .nav-pills > li.active > a:focus {
-   background: #e0336b;
+   background: #1d4464;
    font-weight: bold;
 }
 
@@ -221,7 +221,7 @@ h1#show-survey,
 }
 
 .sidebar li > a:hover {
-  color: #e0336b;
+  color: #1d4464;
   text-decoration: underline;
 }
 

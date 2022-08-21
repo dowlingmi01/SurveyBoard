@@ -4,6 +4,12 @@ class SurveysController < ApplicationController
 	# before_action :authorize_owner!, only: [:edit, :update, :destroy]
 
 	def index
+		if params[:query].present?
+			@surveys = Survey.search(params[:query])
+		else
+			@surveys = Survey.order(created_at: :desc)
+		end
+
 		@surveys = Survey.order(created_at: :desc)
 		@categories = Category.order(:name)
 		authorize @surveys, :index?
