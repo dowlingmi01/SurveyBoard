@@ -10,9 +10,9 @@
 
 <div class="row">
 	<div class="col-sm-9">
-		<%= image_tag "https://picsum.photos/1080/500", class: "survey-image" %>
+		<!-- <%= image_tag "https://picsum.photos/350/200", class: "survey-image" %> -->
 
-		<div class="survey-meta">
+		<div class="survey-details">
 			<h4><span class="survey-start"><strong>Starts:</strong> <%= time_format(@survey.start_date) %></span></h4>
 			<p>
 				<span class="survey-end"><strong>Ends:</strong> <%= time_format(@survey.end_date) %></span>
@@ -20,10 +20,11 @@
 		</div>
 		<div class="survey-details">
 			<h3>Survey Details</h3>
-			<p><%= @survey.description %></p>
-			<p><%= @survey.cpi %></p>
-			<p><%= @survey.incidence %></p>
-			<p><%= @survey.loi %></p>
+			<p><span class="survey-details"><strong>Survey Category:</strong> <%= @survey.category.name %> </span></p>
+			<p><span class="survey-details"><strong>Survey Description:</strong> <%= @survey.description %> </span></p>
+			<p><span class="survey-details"><strong>Cost Per Interview:</strong> <%= @survey.cpi %></span></p>
+			<p><span class="survey-details"><strong>Survey Incidence Rate:</strong> <%= @survey.incidence %></span></p>
+			<p><span class="survey-details"><strong>Length of Interview:</strong> <%= @survey.loi %></span></p>
 		</div>
 	</div>
 
