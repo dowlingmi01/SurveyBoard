@@ -74,7 +74,7 @@ class SurveysController < ApplicationController
 		end
 
 		def survey_params
-			params.require(:survey).permit(:survey_name, :description, :start_date, :end_date, :location, :image, :cpi, :incidence, :loi)
+			params.require(:survey).permit(:survey_name, :description, :start_date, :end_date, :location, :image, :cpi, :incidence, :loi, :category_id)
 		end
 
 		# def authorize_owner!

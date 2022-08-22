@@ -4,7 +4,8 @@ class CategoriesController < ApplicationController
 	skip_after_action :verify_authorized
 
 	def show
-		@categories = Category.all
+		@categories = Category.order(:name)
+		@category_surveys = @category.surveys.order(created_at: :desc)
 	end
 
 	private
