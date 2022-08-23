@@ -173,7 +173,7 @@ a #dislike,
 
 h1#show-survey,
 .survey-details h3 {
-  color: #d91e60;
+  color: #1d4464;
 }
 
 .survey-meta {
@@ -227,4 +227,11 @@ h1#show-survey,
 
 .sidebar li {
   @extend .text-justify !optional;
+}
+
+.navbar {
+  position: relative;
+  min-height: 100px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
 }
