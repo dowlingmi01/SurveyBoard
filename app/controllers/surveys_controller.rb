@@ -5,9 +5,9 @@ class SurveysController < ApplicationController
 
 	def index
 		if params[:query].present?
-			@surveys = Survey.search(params[:query])
+			@surveys = Survey.order.search(params[:query]).page params[:page]
 		else
-			@surveys = Survey.order(created_at: :desc)
+			@surveys = Survey.order(created_at: :desc).page params[:page]
 		end
 
 		@surveys = Survey.order(created_at: :desc)
@@ -74,7 +74,7 @@ class SurveysController < ApplicationController
 		end
 
 		def survey_params
-			params.require(:survey).permit(:survey_name, :description, :start_date, :end_date, :location, :image, :cpi, :incidence, :loi, :category_id)
+			params.require(:survey).permit(:survey_name, :description, :start_date, :end_date, :location, :image, :cpi, :incidence, :loi, :category_id, :completes_needed, :completes_achieved)
 		end
 
 		# def authorize_owner!

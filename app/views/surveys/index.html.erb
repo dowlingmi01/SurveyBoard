@@ -50,7 +50,13 @@
 						<div class="col-sm-9">
 							<h3 class="survey-name"><%= survey.survey_name %></h3>
 							<p>
-								<span class="survey-location"><%= survey.location %> - <strong><%= survey.location %></strong></span>
+								<span class="survey-reward"><strong>Survey Reward: </strong><%= number_to_currency(survey.cpi) %></span>
+							</p>
+							<p>
+								<span class="survey-category"><strong>Survey Category: </strong><%= survey.category.name %></span>
+							</p>
+							<p>
+								<span class="survey-completes"><strong>Completes Needed: </strong><%= survey.completes_needed %></span>
 							</p>
 							<p class="lead-time">
 								<span class="survey-start"><%= time_format(survey.start_date) %></span>
@@ -62,4 +68,8 @@
 			<% end %>
 	</div>
 <% end %>
+<div class="text-center">
+<!-- 	paginate @surveys -->
+</div>
+
 </div>
