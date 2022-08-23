@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   resources :categories, only: [:show]
-  root 'surveys#index'
+  root 'home#index'
 
   resources :surveys
 end
