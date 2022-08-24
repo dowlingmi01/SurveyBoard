@@ -5,7 +5,7 @@ class SurveysController < ApplicationController
 
 	def index
 		if params[:query].present?
-			@surveys = Survey.order.search(params[:query]).page params[:page]
+			@surveys = Survey.search(params[:query]).page params[:page]
 		else
 			@surveys = Survey.order(created_at: :desc).page params[:page]
 		end
@@ -66,8 +66,6 @@ class SurveysController < ApplicationController
 		def set_survey
 			@survey = Survey.find(params[:id])
 
-#			authorize @survey
-
 			rescue ActiveRecord::RecordNotFound
 			flash.alert = "The page you requested does not exist"
 			redirect_to surveys_path
@@ -77,12 +75,4 @@ class SurveysController < ApplicationController
 			params.require(:survey).permit(:survey_name, :description, :start_date, :end_date, :location, :image, :cpi, :incidence, :loi, :category_id, :completes_needed, :completes_achieved)
 		end
 
-		# def authorize_owner!
-		# 	authenticate_user!
-
-		# 	unless @survey.organizer == current_user
-		# 		flash[:alert] = "You do not have permission to '#{action_name}' the '#{@survey.survey_name.upcase}'"
-		# 		redirect_to surveys_path
-		# 	end		
-		# end
 end

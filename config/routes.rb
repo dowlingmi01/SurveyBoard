@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:show]
   root 'home#index'
 
-  resources :surveys
+  resources :surveys do
+    resources :participations, only: [:create]
+  end
 end
