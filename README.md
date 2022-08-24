@@ -1,7 +1,8 @@
-# README
+## CLOUTCLOUD Application
 
-Ruby 3.1.2
-Rails 7.0.3
+This application currently runs on:
 
-Database sqlite3 1.4
+- Ruby 3.1.2
+- Rails 7.0.3
+- Database sqlite3 1.4
 
