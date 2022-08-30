@@ -1,4 +1,6 @@
 class Survey < ApplicationRecord
+
+	enum :status, { draft: 0, invited: 10, active: 20, terminated: 30, completed: 40}
 	searchkick
 	belongs_to :organizer, class_name: "User", foreign_key: "user_id"
 	belongs_to :category

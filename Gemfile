@@ -40,9 +40,10 @@ gem 'will_paginate', '~> 3.3', '>= 3.3.1' #for pagination
 gem 'bootstrap-will_paginate', '~> 1.0' #for bootstrap-style pagination
 gem 'elasticsearch'
 gem 'kaminari', '~> 1.2', '>= 1.2.2'
+gem 'haml', '~> 5.2', '>= 5.2.2'
+gem "haml-rails", "~> 2.0"
+gem 'blanket_wrapper'
 
-# Use Sass to process CSS
-# gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

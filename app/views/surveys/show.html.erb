@@ -27,6 +27,7 @@
 			<p><span class="survey-details"><strong>Survey Incidence Rate:</strong> <%= @survey.incidence %></span></p>
 			<p><span class="survey-details"><strong>Length of Interview:</strong> <%= @survey.loi %></span></p>
 			<p><span class="survey-details"><strong>Completes Needed:</strong> <%= @survey.completes_needed %></span></p>
+			<p><span class="survey-details"><strong>Survey Status:</strong> <%= @survey.status.humanize %></span></p>
 		</div>
 	</div>
 
@@ -34,11 +35,11 @@
 		<div class="sidebar">
 			<h4 class= "organizer"><%= link_to @survey.organizer.username, user_path(@survey.organizer) %></h4>
 			<p>
-				<span class="survey-location"><%= @survey.location %></span>
+				<span class="survey-location">Survey Location: <strong><%= @survey.location %></strong></span>
 			</p>
 		</div>
 		<div class="sidebar">
-			<h4 class="respondents">Respondents</h4>
+			<h4 class="survey-venue">Respondents</h4>
 		</div>
 		
 	</div>
