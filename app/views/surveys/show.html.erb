@@ -4,7 +4,7 @@
 	<h1 id="show-survey"><%= @survey.survey_name %></h1>
 	<ul class="actions">
 		<li><%= link_to "Edit Survey", edit_survey_path(@survey), class: "edit" if policy(@survey).edit? %></li>
-		<li><%= link_to "Delete Survey", survey_path(@survey), method: :delete, data: {confirm: "Are you sure?"}, class: "delete" if policy(@survey).destroy? %></li>
+		<li><%= link_to "Delete Survey", @survey, method: :delete, data: {confirm: "Are you sure?"}, class: "delete" if policy(@survey).destroy? %></li>
 		<li><%= link_to "Take Survey", survey_participations_path(@survey), method: :post, class: "new" %></li>
 	</ul>
 </header>

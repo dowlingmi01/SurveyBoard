@@ -54,7 +54,6 @@ class SurveysController < ApplicationController
 	end
 
 	def destroy
-		authorize @survey, :destroy?
 		@survey.destroy
 		flash[:alert] = "Survey deleted successfully"
 		redirect_to surveys_path
